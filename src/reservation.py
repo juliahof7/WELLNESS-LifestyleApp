@@ -1,3 +1,7 @@
+from fitness_class import FitnessClass
+from user import User
+
+
 class Reservation:
     """Handles class reservations for users."""
 
