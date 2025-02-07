@@ -53,7 +53,7 @@ export default function HomeScreen() {
 
       {/* Bottom Navigation */}
       <View style={styles.bottomNav}>
-        <TouchableOpacity><Text>🏠 Home</Text></TouchableOpacity>
+        <TouchableOpacity><Text> Home</Text></TouchableOpacity>
         <TouchableOpacity><Text>📍 Maps</Text></TouchableOpacity>
         <TouchableOpacity><Text>📖 Record</Text></TouchableOpacity>
         <TouchableOpacity><Text>👥 Groups</Text></TouchableOpacity>
