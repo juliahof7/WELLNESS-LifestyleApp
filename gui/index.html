@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELLNESS Lifestyle App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>WELLNESS Lifestyle App</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#classes">Find Classes</a></li>
+                <li><a href="#workouts">Log Workouts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to WELLNESS Lifestyle App</h2>
+        <p>Your guide for fitness, healthy dining, and eco-conscious travel.</p>
+    </section>
+
+    <section id="classes">
+        <h2>Find Local Fitness Classes</h2>
+        <input type="text" id="classSearch" placeholder="Search for fitness classes">
+        <button onclick="searchClasses()">Search</button>
+        <div id="classResults">
+            <!-- Results will be displayed here -->
+        </div>
+    </section>
+
+    <section id="workouts">
+        <h2>Log Your Workouts</h2>
+        <form id="workoutForm">
+            <label for="workoutType">Workout Type:</label>
+            <input type="text" id="workoutType" required>
+
+            <label for="workoutDuration">Duration (in minutes):</label>
+            <input type="number" id="workoutDuration" required>
+
+            <label for="workoutDate">Date:</label>
+            <input type="date" id="workoutDate" required>
+
+            <button type="submit">Log Workout</button>
+        </form>
+        <div id="workoutLog">
+            <!-- Logged workouts will be displayed here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 WELLNESS Lifestyle App</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
