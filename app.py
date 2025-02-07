@@ -14,20 +14,37 @@ reservations = {}
 
 @app.route('/')
 def home():
+    """Home route for API.
+
+    Returns:
+        str: Simple confirmation message.
+    """
     return "WELLNESS-LifestyleApp Backend is Running!"
 
-# User Registration
 @app.route('/register', methods=['POST'])
 def register_user():
+    """Registers a new user.
+
+    Expects JSON data with user details.
+
+    Returns:
+        JSON: Confirmation message.
+    """
     data = request.json
     user_id = data.get("user_id")
     user = User(user_id=user_id, name=data["name"], email=data["email"], password=data["password"], location=data["location"])
     users[user_id] = user
     return jsonify({"message": "User registered successfully!"})
 
-# User Login
 @app.route('/login', methods=['POST'])
 def login_user():
+    """Logs in a user by checking credentials.
+
+    Expects JSON with email and password.
+
+    Returns:
+        JSON: Success or error message.
+    """
     data = request.json
     email = data["email"]
     password = data["password"]
@@ -36,14 +53,24 @@ def login_user():
             return jsonify({"message": "Login successful!"})
     return jsonify({"error": "Invalid credentials"}), 401
 
-# Get available fitness classes
 @app.route('/fitness_classes', methods=['GET'])
 def get_fitness_classes():
+    """Retrieves all available fitness classes.
+
+    Returns:
+        JSON: A dictionary of class details.
+    """
     return jsonify({class_id: cls.get_class_details() for class_id, cls in fitness_classes.items()})
 
-# Book a fitness class
 @app.route('/book_class', methods=['POST'])
 def book_class():
+    """Books a fitness class for a user.
+
+    Expects JSON with user ID and class ID.
+
+    Returns:
+        JSON: Confirmation message or error message.
+    """
     data = request.json
     user_id = data["user_id"]
     class_id = data["class_id"]
